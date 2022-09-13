@@ -4,93 +4,99 @@
 
 @layer base {
 
-    * {
-        @apply outline-none;
-    }
-    html, body,#root {
-        @apply h-full;
-    }
+  * {
+    @apply outline-none;
+  }
+
+  html, body, #root {
+    @apply h-full;
+  }
 
 }
 
 @layer components {
 
-    .site{
-        @apply h-full table m-auto;
+  .site {
+    @apply h-full table m-auto;
+  }
+
+  .siteContainer {
+    @apply table-cell align-middle;
+  }
+
+  h1 {
+    font-size: 47px;
+  }
+
+  input {
+    @apply border bg-white p-2 border-gray-light rounded w-full transition duration-300 ease-in-out;
+    height: 40px;
+
+    &:focus {
+      @apply border-gray bg-white;
     }
-    .siteContainer{
-        @apply table-cell align-middle;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+
+  label {
+    @apply text-gray-dark;
+    font-size: 16px;
+  }
+
+  .btn-blue {
+    @apply text-white h-10 bg-blue rounded transition duration-300 ease-in-out;
+
+    &:hover {
+      @apply bg-blue-light;
+
     }
+  }
 
-    h1 {
-        font-size: 47px;
-    }
+  .card {
+    @apply bg-silver rounded my-2;
+    width: 450px;
+    min-height: 423px;
+    padding: 37px 20px 19px;
+  }
 
-    input {
-        @apply border bg-white p-2 border-gray-light rounded w-full transition duration-300 ease-in-out;
-        height: 40px;
+  // ****sidebar*****
+  header {
+    @apply fixed right-0 left-0 top-0 z-10;
+    height: 60px;
+  }
 
-        &:focus {
-            @apply border-gray bg-white;
-        }
-    }
-
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px white inset !important;
-    }
-
-    label {
-        @apply text-gray-dark;
-        font-size: 16px;
-    }
-
-    .btn-blue {
-        @apply text-white h-10 bg-blue rounded transition duration-300 ease-in-out;
-
-        &:hover {
-            @apply bg-blue-light;
-
-        }
-    }
-
-    .card {
-        @apply   bg-silver rounded my-2;
-        width: 450px;
-        min-height: 423px;
-        padding: 37px 20px 19px;
-    }
-// ****sidebar*****
-header{
-    @apply  fixed right-0 left-0 top-0 z-10;
-    height:60;
-}
-#sidebar {
+  #sidebar {
     --tw-translate-x: -100%;
-}
-#menu-close-icon {
-    display: none;
-}
+  }
 
-#menu-open:checked ~ #sidebar {
+  #menu-close-icon {
+    display: none;
+  }
+
+  #menu-open:checked ~ #sidebar {
     --tw-translate-x: 0;
-}
+  }
 
-#menu-open:checked ~ * #menu-open-icon {
+  #menu-open:checked ~ * #menu-open-icon {
     display: none;
-}
-#menu-open:checked ~ * #menu-close-icon {
+  }
+
+  #menu-open:checked ~ * #menu-close-icon {
     display: block;
-}
+  }
 
-@media (min-width: 768px) {
+  @media (min-width: 768px) {
     #sidebar {
-        --tw-translate-x: 0;
+      --tw-translate-x: 0;
     }
-}
+  }
 
-// ***************
+  // ***************
 
 }

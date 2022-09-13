@@ -3,5 +3,6 @@ export const Routers={
 
     "LOGIN":'/users/login',
     "REGISTER":'/users',
+    "ARTICLES":'/articles',
 
 };
