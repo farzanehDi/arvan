@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  * {
+    @apply outline-none;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+
+}
+
+@layer components {
+
+  .site {
+    @apply h-full table m-auto;
+  }
+
+  .siteContainer {
+    @apply table-cell align-middle;
+  }
+
+  h1 {
+    font-size: 47px;
+  }
+
+  input:not([type='checkbox']) {
+    @apply border bg-white p-2 border-gray-light rounded w-full transition duration-300 ease-in-out;
+    height: 40px;
+
+    &:focus {
+      @apply border-gray bg-white;
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+
+  label {
+    @apply text-gray-dark;
+    font-size: 16px;
+  }
+
+  .btn-blue {
+    @apply text-white h-10 bg-blue rounded transition duration-300 ease-in-out;
+
+    &:hover {
+      @apply bg-blue-light;
+
+    }
+  }
+
+  .card {
+    @apply bg-silver rounded my-2;
+    width: 450px;
+    min-height: 423px;
+    padding: 37px 20px 19px;
+  }
+  @media only screen and (max-width: 500px) {
+    .card {
+      width: 300px;
+    }
+  }
+
+  // ****sidebar*****
+  header {
+    @apply fixed right-0 left-0 top-0 z-10;
+    height: 60px;
+  }
+
+  #sidebar {
+    --tw-translate-x: -100%;
+  }
+
+  #menu-close-icon {
+    display: none;
+  }
+
+  #menu-open:checked~#sidebar {
+    --tw-translate-x: 0;
+  }
+
+  #menu-open:checked~* #menu-open-icon {
+    display: none;
+  }
+
+  #menu-open:checked~* #menu-close-icon {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    #sidebar {
+      --tw-translate-x: 0;
+    }
+  }
+
+  // ***************
+  /***modal***/
+  .Modal {
+    @apply absolute pt-5 pb-5 flex items-center top-0 right-0 left-0 bottom-0 overflow-auto;
+  }
+
+  .content {
+    @apply bg-white rounded py-5 m-auto;
+    max-width: 1000px;
+  }
+
+  .ReactModal__Body--open {
+    @apply fixed w-full h-full overflow-hidden;
+  }
+
+  .Overlay {
+    @apply opacity-0 fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 z-10 w-screen h-screen;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .Overlay.ReactModal__Overlay--after-open {
+    @apply opacity-100;
+  }
+
+  .Overlay.ReactModal__Overlay--before-close {
+    @apply opacity-0;
+  }
+
+  .pagination{
+    max-width: 200px;
+  }
+
+}
