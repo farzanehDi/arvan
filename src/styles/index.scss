@@ -8,7 +8,9 @@
     @apply outline-none;
   }
 
-  html, body, #root {
+  html,
+  body,
+  #root {
     @apply h-full;
   }
 
@@ -28,7 +30,7 @@
     font-size: 47px;
   }
 
-  input {
+  input:not([type='checkbox']) {
     @apply border bg-white p-2 border-gray-light rounded w-full transition duration-300 ease-in-out;
     height: 40px;
 
@@ -79,15 +81,15 @@
     display: none;
   }
 
-  #menu-open:checked ~ #sidebar {
+  #menu-open:checked~#sidebar {
     --tw-translate-x: 0;
   }
 
-  #menu-open:checked ~ * #menu-open-icon {
+  #menu-open:checked~* #menu-open-icon {
     display: none;
   }
 
-  #menu-open:checked ~ * #menu-close-icon {
+  #menu-open:checked~* #menu-close-icon {
     display: block;
   }
 
@@ -98,5 +100,31 @@
   }
 
   // ***************
+  /***modal***/
+  .Modal {
+    @apply absolute pt-5 pb-5 flex items-center top-0 right-0 left-0 bottom-0 overflow-auto;
+  }
+
+  .content {
+    @apply bg-white rounded p-5 m-auto;
+    max-width: 1000px;
+  }
+
+  .ReactModal__Body--open {
+    @apply fixed w-full h-full overflow-hidden;
+  }
+
+  .Overlay {
+    @apply opacity-0 fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 z-10 w-screen h-screen;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .Overlay.ReactModal__Overlay--after-open {
+    @apply opacity-100;
+  }
+
+  .Overlay.ReactModal__Overlay--before-close {
+    @apply opacity-0;
+  }
 
 }
