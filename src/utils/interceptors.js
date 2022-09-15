@@ -28,8 +28,8 @@ const errorHandler = (error) => {
     );
 
     if (error.response.status===401){
-        // localStorage.removeItem('userInfo');
-        // window.location.href="/login";
+        localStorage.removeItem('userInfo');
+        window.location.href="/login";
     }
 
     return Promise.reject({...error});
